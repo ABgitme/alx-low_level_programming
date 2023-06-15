@@ -1,12 +1,13 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * main - Entry point
  *
- * Return: 0
+ * Return: 1 (Success)
  */
 int main(void)
 {
-fprintf(stderr, "and that piece of art is usefuel\" - Dora Korpar, 2015-10-19\n");
-return (1);
+	fput("and that piece of art is useful\" - Dora Ko
+			rpar, 2015-10-19\n", stdout);
+	return (1);
 }
