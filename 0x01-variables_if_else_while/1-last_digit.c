@@ -2,15 +2,19 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * lastDigit - This is a function to return last digit of the random number
+ * @number: random number
+ * Return: returns the last digit
  */
 int lastDigit(int number)
 {
-int lastDigit = number % 10;
-return (lastDigit);
+return (number % 10);
 }
+/**
+ * main - Entry point
+ * Description: 'The last digit'
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 int n, last_digit;
