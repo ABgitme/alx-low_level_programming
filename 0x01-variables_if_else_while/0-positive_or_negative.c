@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*Positive anything is better than negative nothing */
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -11,15 +15,15 @@ int main(void)
 	/* your code goes there */
 if (n > 0)
 {
-printf("%d is positive", n);
-}
+printf("%d is positive\n", n);
+
 else if (n < 0)
 {
-printf("%d is negative", n);
-} 
-else if (n == 0)
+printf("%d is negative\n", n);
+}
+else
 {
-printf("%d is zero", n);
+printf("%d is zero\n", n);
 }
 
 	return (0);
