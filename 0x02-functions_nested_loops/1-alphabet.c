@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- * main - Entry point
- * Description: 'Display Alphabet'
- * Return: Always 0 (Success)
+ * print_alphabet - print alphabets
  */
 void print_alphabet(void)
 {
@@ -11,7 +9,7 @@ char s[] = "abcdefghijklmnopqrstuvwxyz";
 while (i < 26)
 {
 _putchar(s[i]);
- ++i;
+++i;
 }
 _putchar('\n');
 }
