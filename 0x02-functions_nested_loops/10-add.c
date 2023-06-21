@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  *add - This is a description
- *@a: valriable 
+ *@a: valriable
  *@b: variable
- *return: added value 
+ *Return: added value
  */
 int add(int a, int b)
 {
