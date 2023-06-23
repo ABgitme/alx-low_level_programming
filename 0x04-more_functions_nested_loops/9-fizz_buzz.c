@@ -2,6 +2,7 @@
 #include <stdio.h>
 /**
  * main -program cycle
+ * Return: value 0
  */
 void main(void)
 {
@@ -24,4 +25,5 @@ else
 printf("%d ", i);
 }
 printf("\n");
+return (0);
 }
