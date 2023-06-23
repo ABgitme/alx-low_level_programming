@@ -4,7 +4,7 @@
  * main -program cycle
  * Return: value 0
  */
-void main(void)
+int main(void)
 {
 int i;
 for (i = 1 ; i <= 100; i++)
