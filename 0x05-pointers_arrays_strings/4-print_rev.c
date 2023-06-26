@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * _puts - Solve me
+ * print_rev - Solve me
  * @str: character
  * Return: none
  */
-int _puts(char *str)
+void print_rev(char *str)
 {
 int size = 0;
 while (str[size] != '\0')
