@@ -2,6 +2,7 @@
 /**
  * _strlen - Solve me
  * @s: character
+ * Return: string
  */
 int _strlen(char *s)
 {
