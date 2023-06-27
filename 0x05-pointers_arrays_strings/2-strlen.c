@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strlen- Solve me
+ * _strlen - Solve me
  * @s: character
  */
 int _strlen(char *s)
