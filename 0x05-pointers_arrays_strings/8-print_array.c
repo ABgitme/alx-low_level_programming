@@ -1,0 +1,22 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * print_array - Solve me
+ * @a: val1
+ * @n: val2
+ */
+void print_array(int *a, int n)
+{
+int i;
+for (i = 0; i < n; i++)
+{
+if (i < (n - 1))
+{
+printf("%d ", a[i]);
+printf(", ");
+}
+else
+printf("%d ", a[i]);
+}
+printf("\n");
+}
