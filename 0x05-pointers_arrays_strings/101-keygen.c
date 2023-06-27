@@ -8,6 +8,7 @@ int main()
 {
 
     int length = 15;
+    int i;
     char *password = malloc(length + 1);
     char *uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int uppercase_len = strlen(uppercase);
@@ -20,7 +21,7 @@ int main()
 
     srand(time(NULL) * getpid());
 
-    for (int i = 0; i < length; i++)
+    for (i = 0; i < length; i++)
     {
         int char_type = rand() % 4;
 
@@ -35,4 +36,5 @@ int main()
     }
     password[length] = '\0';
     printf("%s\n", password);
+    return (0);
 }
