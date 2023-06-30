@@ -6,17 +6,17 @@
  */
 char *rot13(char *sr)
 {
-int i;
-for (i = 0; sr[i] != '\0'; i++)
+int j;
+for (j = 0; sr[j] != '\0'; j++)
 {
-while ((sr[i] >= 'a' && sr[i] <= 'z') || (sr[i] >= 'A' && sr[i] <= 'Z'))
+while ((sr[j] >= 'a' && sr[j] <= 'z') || (sr[j] >= 'A' && sr[j] <= 'Z'))
 {
-if ((sr[i] >= 'a' && sr[i] <= 'm') ||
-(sr[i] >= 'A' && sr[i] <= 'M'))
-sr[i] += 13;
+if ((sr[j] >= 'a' && sr[j] <= 'm') ||
+(sr[j] >= 'A' && sr[j] <= 'M'))
+sr[j] += 13;
 else
-sr[i] -= 13;
-i++;
+sr[j] -= 13;
+j++;
 }
 }
 return (sr);
