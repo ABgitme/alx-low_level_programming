@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * _strchr - sets char
  * @s: char to set
