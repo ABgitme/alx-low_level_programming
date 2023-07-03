@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * _strpbrk - sets char
  * @s: char to set
@@ -7,11 +8,11 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
+char *tmp;	
 if (s == NULL || accept == NULL)
 {
 return (NULL);
 }
-char *tmp;
 while (*s != '\0')
 {
 tmp = accept;
