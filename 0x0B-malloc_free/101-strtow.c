@@ -1,4 +1,42 @@
 #include <stdlib.h>
+int word_size(char *str);
+int count_words(char *str);
+char **strtow(char *str);
+/**
+ * word_size - locating end of words in a string
+ * @str: searched string
+ * Return: end index
+ */
+int word_size(char *str)
+{
+int index = 0, len = 0;
+while (*(str + index) && *(str + index) != ' ')
+{
+len++;
+index++;
+}
+return (len);
+}
+/**
+ * count_words - words in a string count
+ * @str: searched string
+ * Return: word index
+ */
+int count_words(char *str)
+{
+int index = 0, words = 0, len = 0;
+for (index = 0; *(str + index); ++index)
+len++;
+for (index = 0; index < len; ++index)
+{
+if (*(str + index) != ' ')
+{
+words++;
+index += word_size(str + index);
+}
+}
+return (words);
+}
 /**
  * strtow - A function that splits a string into words
  * @str: An input pointer of the string to split
@@ -6,42 +44,34 @@
  */
 char **strtow(char *str)
 {
-char **array;
-int i = 0, j, m, k = 0, len = 0, count = 0;
+char **result;
+int index = 0, words, w, letters, l;
 if (str == NULL || *str == '\0')
 return (NULL);
-for (; str[i]; i++)
-{
-if ((str[i] != ' ' || *str != '\t') &&
-((str[i + 1] == ' ' || str[i + 1] == '\t') || str[i + 1] == '\n'))
-count++;
-}
-if (count == 0)
+words = count_words(str);
+if (words == 0)
 return (NULL);
-array = malloc(sizeof(char *) * (count + 1));
-if (array == NULL)
+result = malloc(sizeof(char *) * (words + 1));
+if (result == NULL)
 return (NULL);
-for (i = 0; str[i] != '\0' && k < count; i++)
+for (w = 0; w < words; ++w)
 {
-if (str[i] != ' ' || str[i] != '\t')
+while (str[index] == ' ')
+index++;
+letters = word_size(str + index);
+result[w] = malloc(sizeof(char) * (letters + 1));
+if (result[w] == NULL)
 {
-len = 0;
-j = i;
-while ((str[j] != ' ' || str[j] != '\t') && str[j] != '\0')
-j++, len++;
-array[k] = malloc((len + 1) * sizeof(char));
-if (array[k] == NULL)
-{
-for (k = k - 1; k >= 0; k++)
-free(array[k]);
-free(array);
+for (; w >= 0; w--)
+free(result[w]);
+free(result);
 return (NULL);
 }
-for (m = 0; m < len; m++, i++)
-array[k][m] = str[i];
-array[k++][m] = '\0';
+for (l = 0; l < letters; l++)
+result[w][l] = str[index++];
+result[w][l] = '\0';
 }
+result[w] = NULL;
+return (result);
 }
-array[k] = NULL;
-return (array);
-}
+
