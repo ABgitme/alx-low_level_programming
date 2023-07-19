@@ -26,9 +26,9 @@ Main_func_ptr = (unsigned char *)main;
 i = 0;
 if (bytes > 0)
 {
-while (i < (bytes - 1))
-	printf("%02hhx ", Main_func_ptr[i++]);
-printf("%hhx\n", Main_func_ptr[i]);
+	while (i < (bytes - 1))
+		printf("%02hhx ", Main_func_ptr[i++]);
+	printf("%hhx\n", Main_func_ptr[i]);
 }
 	return (0);
 }
