@@ -4,23 +4,27 @@
  * print_binary - function to convert int to binary
  * @n : int value to convert
  */
-void print_binary(unsigned long int n) {
-   	unsigned int flag = 0, max = 32768; /* 1000 0000 0000 0000 */
+unsigned int _log2(unsigned int x) {
+    int y = 0;
+    while (x > 0) {
+        x >>= 1;
+        y++;
+    }
+    return y;
+}
+void print_binary(unsigned long int n)
+{
+      int len;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	while (max)
-	{
-		if (flag == 1 && (n & max) == 0)
-			_putchar('0');
-		else if ((n & max) != 0)
-		{
-			_putchar('1');
-			flag = 1;
-		}
-		max >>= 1;
-	}
+      len = (int)_log2(n) - 1;
+      if (n == 0)
+      {
+      _putchar('0');
+      }
+      else
+      {
+    for ( ; len >= 0; len--) {
+        _putchar('0' + ((n >> len) & 1));
+    }
+      }
 }
