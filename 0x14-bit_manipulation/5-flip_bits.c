@@ -8,17 +8,13 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-/* Initialize the number of bits to flip. */
-	unsigned int bits_to_flip = 0;
-
-/* Iterate through the bits of the two numbers. */
-	for (int i = 0; i < 32; i++)
-	{
-/* If the bits are different, increment the number of bits to flip. */
-	if ((n & (1 << i)) != (m & (1 << i)))
-	{
-		bits_to_flip += (n & (1 << i)) ^ (m & (1 << i));
-	}
-	}
-	return (bits_to_flip);
+unsigned int count = 0;
+  while (n != m) {
+    if ((n & 1) != (m & 1)) {
+      count++;
+    }
+    n >>= 1;
+    m >>= 1;
+  }
+  return count;
 }
