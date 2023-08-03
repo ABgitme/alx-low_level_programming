@@ -6,18 +6,10 @@
  */
 int get_endianness(void)
 {
-/*
- * A union that can store either an array of 4 bytes or an unsigned integer.
- */
-	union
-	{
-	unsigned char bytes[4];
-	unsigned int value;
-	} u;
-/* Initialize the union. */
-	u.value = 1;
-/* Check the byte at the least significant end. */
-	if (u.bytes[0] == 1)
+	unsigned char byte;
+	int val = 1;	
+	byte = *(unsigned char *)&val;
+	if (byte == 1)
 		return (1);
 	else
 		return (0);
