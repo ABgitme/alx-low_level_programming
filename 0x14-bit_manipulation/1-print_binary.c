@@ -5,18 +5,22 @@
  * @n : int value to convert
  */
 void print_binary(unsigned long int n) {
-    unsigned int rem;
-      	if (n == 0) {
-        _putchar('0');
-        return;
-    }
-    
-    rem = n & 1; 
-    _putchar(rem + '0');
-    
-    if (rem == 0) {
-        print_binary(n >> 1); 
-    } else {
-        print_binary(n ^ 1); 
-    }
+   	unsigned int flag = 0, max = 32768; /* 1000 0000 0000 0000 */
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+	while (max)
+	{
+		if (flag == 1 && (n & max) == 0)
+			_putchar('0');
+		else if ((n & max) != 0)
+		{
+			_putchar('1');
+			flag = 1;
+		}
+		max >>= 1;
+	}
 }
