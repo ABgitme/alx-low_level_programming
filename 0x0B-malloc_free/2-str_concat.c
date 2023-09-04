@@ -16,21 +16,13 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL)
 	{
 		s1 = "";
-		len1 = 1;
-	}
-	else
-	{
-		len1 = strlen(s1);
 	}
 	if (s2 == NULL)
 	{
 		s2 = "";
-		len2 = 1;
 	}
-	else
-	{
-		len2 = strlen(s2);
-	}
+	len1 = strlen(s1);
+	len2 = strlen(s2);
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (new_str == NULL)
 		return (NULL);
