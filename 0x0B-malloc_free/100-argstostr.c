@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * argstostr - A function that splits a string into words
  * @ac: argument
@@ -8,7 +9,22 @@
  */
 char *argstostr(int ac, char **av)
 {
-int ch = 0, i = 0, j = 0, k = 0;
+int len = 0;
+int i;
+char *s;
+  for (i = 0; i < ac; i++) {
+    len += strlen(av[i]);
+  }
+  s = malloc(len + ac + 1); 
+  if (s == NULL) return NULL;
+
+  for (i = 0; i < ac; i++) {
+    strcat(s, av[i]);
+    strcat(s, "\n");
+  }
+
+  return s;
+/*int ch = 0, i = 0, j = 0, k = 0;
 char *s;
 if (ac == 0 || av == NULL)
 return (NULL);
@@ -39,5 +55,5 @@ i++;
 }
 k++;
 s[k] = '\0';
-return (s);
+return (s);*/
 }
