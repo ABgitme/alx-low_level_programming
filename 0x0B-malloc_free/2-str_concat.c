@@ -21,22 +21,9 @@ char *str_concat(char *s1, char *s2)
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (new_str == NULL)
 		return (NULL);
-	if (s1 == NULL)
-	{
-		new_str[0] = '\0';
-	}
-	else
-	{
-		_strncpy(new_str, s1, len1);
-	}
-	if (s2 == NULL)
-	{
-		new_str[len1] = '\0';
-	}
-	else
-	{
-		_strncpy(new_str + len1, s2, len2 + 1);
-	}
+	_strncpy(new_str, s1, len1);
+	_strncpy(new_str + len1, s2, len2 + 1);
+	new_str[len1 + len2] = '\0';
 	return (new_str);
 }
 
