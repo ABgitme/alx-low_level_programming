@@ -11,13 +11,26 @@ char *_strncpy(char *dest, char *src, int n);
 char *str_concat(char *s1, char *s2)
 {
 	char *new_str;
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
-
+	int len1, len2;
+	
 	if (s1 == NULL)
+	{
 		s1 = "";
+		len1 = 1;
+	}
+	else
+	{
+		len1 = strlen(s1);
+	}
 	if (s2 == NULL)
+	{
 		s2 = "";
+		len2 = 1;
+	}
+	else
+	{
+		len2 = strlen(s2);
+	}
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (new_str == NULL)
 		return (NULL);
