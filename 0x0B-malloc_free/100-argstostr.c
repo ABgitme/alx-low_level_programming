@@ -21,6 +21,7 @@ char *s;
   for (i = 0; i < ac; i++) {
     strcat(s, av[i]);
     strcat(s, "\n");
+    strcat(s, "\0");
   }
 
   return s;
