@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+char *_strncpy(char *dest, char *src, int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 /**
  * str_concat - A function that concatenates two strings
@@ -21,8 +22,8 @@ char *str_concat(char *s1, char *s2)
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (new_str == NULL)
 		return (NULL);
-	_memcpy(new_str, s1, len1);
-	_memcpy(new_str + len1, s2, len2 + 1);
+	_strncpy(new_str, s1, len1);
+	_strncpy(new_str + len1, s2, len2 + 1);
 	return (new_str);
 }
 
@@ -44,4 +45,31 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		ch_dest[i] = ch_src[i];
 	}
 	return (dest);
+}
+
+/**
+ * _strncpy - a function that copys the strings.
+ * @dest: an input string
+ * @src: an input string
+ * @n: an input integer
+ * Return: A pointer to the resulting string
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+int srclen = 0;
+int i = 0;
+char *temp = dest;
+char *start = src;
+while (*src)
+{
+srclen++;
+src++;
+}
+srclen++;
+if (n > srclen)
+n = srclen;
+src = start;
+for (; i < n; i++)
+*dest++ = *src++;
+return (temp);
 }
