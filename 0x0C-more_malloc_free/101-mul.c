@@ -23,13 +23,13 @@ char *str2;
 		printf("Error\n");
 		exit(98);
 	}
-	str1 = malloc(sizeof(char) * strlen(argv[1] + 1));
+	str1 = malloc(sizeof(char) * (strlen(argv[1]) + 1));
 	if (str1 == NULL)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	str2 = malloc(sizeof(char) * strlen(argv[2] + 1));
+	str2 = malloc(sizeof(char) * (strlen(argv[2]) + 1));
 	if (str2 == NULL)
 	{
 		printf("Error\n");
