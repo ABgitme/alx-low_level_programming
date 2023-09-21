@@ -12,7 +12,7 @@ main:
 	mov	rsi,msg
 	mov	rax,0
 	call	printf
-	mov	rax,60
+	mov	rax,0
 	ret
 
 
