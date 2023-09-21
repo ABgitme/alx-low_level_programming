@@ -1,19 +1,18 @@
 extern printf
 
-section .data
+	section .data
 msg:		db "Hello, Holberton", 0
 fmt:		db "%s", 10, 0
 
-section .text
+	section .text
 
-global main
+	global main
 main:
+	push	rbp
 	mov	rdi,fmt
 	mov	rsi,msg
 	mov	rax,0
 	call	printf
-	mov	rax,60
+	pop	rbp
+	mov	rax,0
 	ret
-
-
-
