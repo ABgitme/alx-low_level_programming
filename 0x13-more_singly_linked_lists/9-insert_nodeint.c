@@ -6,7 +6,7 @@
  * @h: A pointer to listint_t structure
  * Return: number of nodes
  */
-unsigned int list_length(listint_t *h)
+/*unsigned int list_length(listint_t *h)
 {
 	int count = 0;
 
@@ -16,7 +16,7 @@ unsigned int list_length(listint_t *h)
 		h = h->next;
 	}
 	return (count);
-}
+}*/
 
 /**
  * insert_nodeint_at_index - A function that inserts node at given index
@@ -27,7 +27,7 @@ unsigned int list_length(listint_t *h)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node;
+	/*listint_t *new_node;
 	unsigned int i;
 	listint_t *prev_node;
 
@@ -49,5 +49,47 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	new_node->next = prev_node->next;
 	prev_node->next = new_node;
-	return (new_node);
+	return (new_node);*/
+	unsigned int i;
+	    listint_t *new_node;
+		 listint_t *current_node;
+  if (head == NULL) {
+    return NULL;
+  }
+
+ 
+  new_node = malloc(sizeof(listint_t));
+  if (new_node == NULL) {
+    return NULL;
+  }
+  new_node->n = n;
+  new_node->next = NULL;
+
+
+  if (*head == NULL) {
+    *head = new_node;
+    return new_node;
+  }
+
+ 
+  if (idx == 0) {
+    new_node->next = *head;
+    *head = new_node;
+    return new_node;
+  }
+
+ 
+  current_node = *head;
+  for (i = 0; i < idx - 1; i++) {
+    if (current_node == NULL) {
+      return NULL;
+    }
+    current_node = current_node->next;
+  }
+
+ 
+  new_node->next = current_node->next;
+  current_node->next = new_node;
+
+  return new_node;
 }
