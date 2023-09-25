@@ -38,8 +38,8 @@ size_t nodes = 1;
 	second = (second->next)->next;
 }
 	return (0);
-	 
-	
+
+
 }
 /**
  * print_listint_safe - A function that prints the elementsin a  list
@@ -50,7 +50,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes = loop_listint_size(head);
 	size_t ref;
-	
+
 	if (head == NULL)
 		exit(98);
 	if (nodes == 0)
@@ -60,7 +60,7 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
-    }
+	}
 	}
 	else
 	{
