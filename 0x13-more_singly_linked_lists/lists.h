@@ -8,13 +8,25 @@
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- * for Holberton project
+ *
  */
 typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
 } listint_t;
+/**
+ * struct listptr_s - singly linked list
+ * @p: pointers of nodes
+ * @next: points to the next node
+ *
+ * Description: singly linked list of pointers
+ */
+typedef struct listptr_s
+{
+	void *p;
+	struct listptr_s *next;
+} listptr_t;
 size_t recursion_printer(const listint_t *h);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
