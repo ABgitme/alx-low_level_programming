@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * _log2 - A function that converts to base 2
- * @x: The number to be converted
- * Return: base 2 value
+ * bit_length - Returns the lenght of bit of an unsigned int.
+ * @n: unsigned int bit lenth to look for
+ * Return: bit lenght
  */
-unsigned int _log2(unsigned int x)
+int bit_length(unsigned int n)
 {
-	int y = 0;
+        int bits = 0;
 
-	while (x > 0)
-	{
-		x >>= 1;
-		y++;
-	}
-	return (y);
+        while (n != 0)
+        {
+                bits++;
+                n >>= 1;
+        }
+        return (bits);
 }
 /**
  * print_binary - A function that prints a binary number without % or /
@@ -23,18 +23,21 @@ unsigned int _log2(unsigned int x)
  */
 void print_binary(unsigned long int n)
 {
-	int len;
+        char c;
+        int max_bits, i;
 
-	len = (int)_log2(n) - 1;
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		for ( ; len >= 0; len--)
-		{
-			_putchar('0' + ((n >> len) & 1));
-		}
-	}
+        if (n == 0)
+        {
+                _putchar('0');
+        }
+        max_bits = bit_length(n);
+        for (i = max_bits - 1; i >= 0; i--)
+        {
+                c = '0' + ((n >> i) & 1);
+                _putchar(c);
+                if (n == 0)
+                {
+                        break;
+                }
+        }
 }
