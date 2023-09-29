@@ -7,14 +7,14 @@
  */
 int bit_length(unsigned int n)
 {
-        int bits = 0;
+	int bits = 0;
 
-        while (n != 0)
-        {
-                bits++;
-                n >>= 1;
-        }
-        return (bits);
+	while (n != 0)
+	{
+		bits++;
+		n >>= 1;
+	}
+	return (bits);
 }
 /**
  * print_binary - A function that prints a binary number without % or /
@@ -23,21 +23,21 @@ int bit_length(unsigned int n)
  */
 void print_binary(unsigned long int n)
 {
-        char c;
-        int max_bits, i;
+	char c;
+	int max_bits, i;
 
-        if (n == 0)
-        {
-                _putchar('0');
-        }
-        max_bits = bit_length(n);
-        for (i = max_bits - 1; i >= 0; i--)
-        {
-                c = '0' + ((n >> i) & 1);
-                _putchar(c);
-                if (n == 0)
-                {
-                        break;
-                }
-        }
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	max_bits = bit_length(n);
+	for (i = max_bits - 1; i >= 0; i--)
+	{
+		c = '0' + ((n >> i) & 1);
+		_putchar(c);
+		if (n == 0)
+		{
+			break;
+		}
+	}
 }
