@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fileinput, n;
+	int fileinput, n, wr;
 	char *buffer;
 	int flags = O_RDONLY;
 
@@ -29,7 +29,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-	write(STDOUT_FILENO, buffer, n);
+	wr = write(STDOUT_FILENO, buffer, n);
+	if (wr < 0)
+	{
+		close(fileinput);
+		free(buffer);
+		return (0);
+	}
 	free(buffer);
 	close(fileinput);
 	return (n);
