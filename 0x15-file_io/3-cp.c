@@ -40,11 +40,16 @@ int main(int argc, char *argv[])
 			break;
 		}
 	}
+	if (bytes_read < 0)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+	exit(98);
+	}
 	_close(fd_to);
 	_close(fd_from);
 	if (error < 0)
 	{
-		exit(100);
+		exit(99);
 	}
 	return (0);
 }
@@ -60,6 +65,7 @@ int _close(int fd)
 	if (error < 0)
 	{
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	exit(100);
 	}
 	return (error);
 }
