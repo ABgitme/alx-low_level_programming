@@ -59,7 +59,7 @@ void display_elf_header(const char *elf_filename)
     printf("OS/ABI: %d\n", elf_header.e_ident[EI_OSABI]);
     printf("ABI Version: %d\n", elf_header.e_ident[EI_ABIVERSION]);
     printf("Type: %d\n", elf_header.e_ident[EI_PAD]);
-    printf("Entry point address: 0x%lx\n", elf_header.e_ident[EI_NIDENT]);
+    printf("Entry point address: 0x%x\n", elf_header.e_ident[EI_NIDENT]);
 
     /*Close the ELF file.*/
     fclose(fp);
