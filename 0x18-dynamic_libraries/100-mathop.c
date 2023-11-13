@@ -1,9 +1,8 @@
-#include "100-operations.h"
-
+#include "100-mathop.h"
 
 /**
  * add - a function that adds two int values
- * @a: value 1 
+ * @a: value 1
  * @b: value 2
  *
  * Return: added value
