@@ -9,9 +9,6 @@ OBJ = $(SRC:.c=.o)
 # Executable Name
 NAME = school
 
-# Commands
-RM = rm -f
-
 all: $(NAME)
 
 # Executable Compilation
