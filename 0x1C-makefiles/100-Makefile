@@ -15,12 +15,8 @@ RM = rm -f
 all: $(NAME)
 
 # Executable Compilation
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
-
-# Object Files Compilation
-%.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): m.h $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 # Cleaning Rules
 clean:
@@ -30,6 +26,5 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
-	$(RM) $(NAME)
 
 re: fclean all
