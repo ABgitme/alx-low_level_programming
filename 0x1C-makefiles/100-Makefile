@@ -1,0 +1,35 @@
+# Compiler and Flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source Files
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+# Executable Name
+NAME = school
+
+# Commands
+RM = rm -f
+
+all: $(NAME)
+
+# Executable Compilation
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Object Files Compilation
+%.o: %.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Cleaning Rules
+clean:
+	$(RM) *~ *.swp $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+	$(RM) $(NAME)
+
+re: fclean all
