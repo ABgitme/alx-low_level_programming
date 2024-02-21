@@ -15,7 +15,7 @@ all: $(NAME)
 
 # Executable Compilation
 $(NAME): m.h $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 # Cleaning Rules
 clean:
