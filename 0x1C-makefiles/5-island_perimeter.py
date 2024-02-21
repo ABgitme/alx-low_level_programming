@@ -31,27 +31,18 @@ def island_perimeter(grid):
         The perimeter of the island as an integer.
     """
 
-    rows, cols = len(grid), len(grid[0])
+    rows = len(grid)
+    cols = len(grid[0])
     perimeter = 0
 
-    for row in range(rows):
-        for col in range(cols):
-            if grid[row][col] == 1:
-                # Check all four neighbors
-                neighbors = [
-                    (row - 1, col),
-                    (row + 1, col),
-                    (row, col - 1),
-                    (row, col + 1)
-                ]
-                for neighbor_row, neighbor_col in neighbors:
-                    # If neighbor is out of bounds or water, add 1 to perimeter
-                    if any([
-                        neighbor_row < 0,
-                        neighbor_row >= rows,
-                        neighbor_col < 0,
-                        neighbor_col >= cols,
-                        grid[neighbor_row][neighbor_col] == 0
-                    ]):
-                        perimeter += 1
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == 1:
+                perimeter += 4
+                # Check neighboring cells
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2
+
     return perimeter
