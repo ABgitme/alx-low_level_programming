@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89
 
-SRCS = 0-main.c 0-linear.c
+SRCS = 1-main.c 1-binary.c
 OBJS = $(SRCS:.c=.o)
-TARGET = 0-linear
+TARGET = 1-binary
 
 all: $(TARGET)
 
