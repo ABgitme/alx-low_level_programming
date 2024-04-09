@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89 -lm
 LDFLAGS = -lm
-SRCS = 100-main.c 100-jump.c
+SRCS = 102-main.c 102-interpolation.c
 OBJS = $(SRCS:.c=.o)
-TARGET = 100-jump
+TARGET = 102-interpolation
 
 all: $(TARGET)
 
