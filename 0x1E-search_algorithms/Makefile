@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89 -lm
 LDFLAGS = -lm
-SRCS = 104-main.c 104-advanced_binary.c
+SRCS = 105-main.c 105-jump_list.c create_list.c free_list.c print_list.c
 OBJS = $(SRCS:.c=.o)
-TARGET = 104-advanced_binary
+TARGET = 105-jump
 
 all: $(TARGET)
 
