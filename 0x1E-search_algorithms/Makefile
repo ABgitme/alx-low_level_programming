@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89 -lm
 LDFLAGS = -lm
-SRCS = 105-main.c 105-jump_list.c create_list.c free_list.c print_list.c
+SRCS = 106-main.c 106-linear_skip.c create_skiplist.c free_skiplist.c print_skiplist.c
 OBJS = $(SRCS:.c=.o)
-TARGET = 105-jump
+TARGET = 106-linear
 
 all: $(TARGET)
 
