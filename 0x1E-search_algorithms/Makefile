@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89 -lm
 LDFLAGS = -lm
-SRCS = 103-main.c 103-exponential.c 1-binary.c
+SRCS = 104-main.c 104-advanced_binary.c
 OBJS = $(SRCS:.c=.o)
-TARGET = 103-exponential
+TARGET = 104-advanced_binary
 
 all: $(TARGET)
 
